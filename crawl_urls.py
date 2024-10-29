@@ -91,12 +91,13 @@ st.markdown('---')
 # Streamlitの入力フォーム
 start_url = st.text_input('URLを入力してください')
 url_pattern = st.text_input('サブディレクトリを入力してください')
+max_depth = st.number_input('最大深度を入力してください', min_value=1, max_value=3, value=2)
 
 # 検索ボタン
 if st.button("search"):
   # クロール処理
   with st.spinner('Crawling... This may take minutes'):
-    urls = crawl_web_pages(start_url, url_pattern, max_depth=2)
+    urls = crawl_web_pages(start_url, url_pattern, max_depth)
 
   # 結果表示
   st.subheader('results:')
