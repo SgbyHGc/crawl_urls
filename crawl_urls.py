@@ -85,7 +85,7 @@ def crawl_web_pages(url, pattern, max_depth=2):
 st.title("URL検索 🔎")
 
 st.markdown('---')
-st.markdown('This app gets a list of URLs under a specific URL. Enter the URL and subdirectory you want to check in the blanks. (Example of subdirectory: <span>xxx</span> part of "<span>www.thinkwithgoogle.com/intl/ja-jp/xxx/</span>")', unsafe_allow_html=True)
+st.markdown('This app gets a list of URLs under a specific URL. Enter the URL and subdirectory you want to check in the blanks. (Example of subdirectory: xxx part of `www.thinkwithgoogle.com/intl/ja-jp/xxx/`)')
 st.markdown('---')
 
 # Streamlitの入力フォーム
