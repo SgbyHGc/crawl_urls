@@ -85,19 +85,18 @@ def crawl_web_pages(url, pattern, max_depth=2):
 st.title("URL検索 🔎")
 
 st.markdown('---')
-st.markdown('This app gets a list of URLs under a specific URL. Enter the URL and subdirectory you want to check in the blanks. (Example: xxx part of www.thinkwithgoogle.com/intl/ja-jp/xxx/)')
+st.markdown('This app gets a list of URLs under a specific URL. Enter the URL and subdirectory you want to check in the blanks. (Example of subdirectory: "xxx part of www.thinkwithgoogle.com/intl/ja-jp/xxx/")')
 st.markdown('---')
 
 # Streamlitの入力フォーム
 start_url = st.text_input('URLを入力してください')
-url_pattern = st.text_input('URLパターンを入力してください')
-max_depth = st.number_input('最大深度を入力してください', min_value=1, max_value=5, value=2)
+url_pattern = st.text_input('サブディレクトリを入力してください')
 
 # 検索ボタン
 if st.button("search"):
   # クロール処理
   with st.spinner('Crawling... This may take minutes'):
-    urls = crawl_web_pages(start_url, url_pattern, max_depth)
+    urls = crawl_web_pages(start_url, url_pattern, max_depth=2)
 
   # 結果表示
   st.subheader('results:')
